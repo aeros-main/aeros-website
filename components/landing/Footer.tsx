@@ -26,7 +26,7 @@ const footerLinks = {
     { label: 'Contact', href: '#' },
   ],
   Legal: [
-    { label: 'Privacy Policy', href: '#' },
+    { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '#' },
     { label: 'Cookie Policy', href: '#' },
     { label: 'Data Processing', href: '#' },
@@ -140,9 +140,13 @@ export default function Footer() {
             © 2025 Aeros Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            {['Privacy', 'Terms', 'Cookies'].map((link) => (
-              <a key={link} href="#" className="text-white/30 hover:text-white/60 text-sm transition-colors">
-                {link}
+            {[
+              { label: 'Privacy', href: '/privacy' },
+              { label: 'Terms', href: '#' },
+              { label: 'Cookies', href: '#' },
+            ].map(({ label, href }) => (
+              <a key={label} href={href} className="text-white/30 hover:text-white/60 text-sm transition-colors">
+                {label}
               </a>
             ))}
           </div>
