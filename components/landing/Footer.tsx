@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 const footerLinks = {
   Product: [
     { label: 'Marketplace', href: '#' },
@@ -118,12 +120,21 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        href={link.href}
+                        className="text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -145,9 +156,15 @@ export default function Footer() {
               { label: 'Terms', href: '#' },
               { label: 'Cookies', href: '#' },
             ].map(({ label, href }) => (
-              <a key={label} href={href} className="text-white/30 hover:text-white/60 text-sm transition-colors">
-                {label}
-              </a>
+              href.startsWith('/') ? (
+                <Link key={label} href={href} className="text-white/30 hover:text-white/60 text-sm transition-colors">
+                  {label}
+                </Link>
+              ) : (
+                <a key={label} href={href} className="text-white/30 hover:text-white/60 text-sm transition-colors">
+                  {label}
+                </a>
+              )
             ))}
           </div>
           <div className="flex items-center gap-2">
