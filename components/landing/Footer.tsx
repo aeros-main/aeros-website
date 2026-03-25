@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 const footerLinks = {
   Product: [
     { label: 'Marketplace', href: '#' },
@@ -26,7 +28,7 @@ const footerLinks = {
     { label: 'Contact', href: '#' },
   ],
   Legal: [
-    { label: 'Privacy Policy', href: '#' },
+    { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms of Service', href: '#' },
     { label: 'Cookie Policy', href: '#' },
     { label: 'Data Processing', href: '#' },
@@ -118,12 +120,21 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        href={link.href}
+                        className="text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-white/40 hover:text-white/80 text-sm transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -140,10 +151,20 @@ export default function Footer() {
             © 2025 Aeros Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            {['Privacy', 'Terms', 'Cookies'].map((link) => (
-              <a key={link} href="#" className="text-white/30 hover:text-white/60 text-sm transition-colors">
-                {link}
-              </a>
+            {[
+              { label: 'Privacy', href: '/privacy' },
+              { label: 'Terms', href: '#' },
+              { label: 'Cookies', href: '#' },
+            ].map(({ label, href }) => (
+              href.startsWith('/') ? (
+                <Link key={label} href={href} className="text-white/30 hover:text-white/60 text-sm transition-colors">
+                  {label}
+                </Link>
+              ) : (
+                <a key={label} href={href} className="text-white/30 hover:text-white/60 text-sm transition-colors">
+                  {label}
+                </a>
+              )
             ))}
           </div>
           <div className="flex items-center gap-2">
