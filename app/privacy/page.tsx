@@ -170,51 +170,45 @@ export default function PrivacyPolicy() {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero */}
-      <section className="pt-32 pb-16 px-6 bg-aeros-surface-alt border-b border-aeros-border">
+      <section className="pt-32 pb-16 px-6 bg-paper-2 hairline-b">
         <div className="max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-aeros-blue/8 border border-aeros-blue/15 mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-aeros-blue" />
-            <span className="text-aeros-blue text-xs font-semibold font-mono uppercase tracking-wider">Legal</span>
+          <div className="text-[10px] font-mono uppercase tracking-widest text-muted-2 mb-4">
+            Legal
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-aeros-text font-jakarta tracking-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-ink font-jakarta tracking-tight mb-4">
             Privacy Policy
           </h1>
-          <p className="text-aeros-text-muted text-lg leading-relaxed mb-6">
+          <p className="text-muted text-lg leading-relaxed mb-6">
             We are committed to protecting your personal information and being transparent about how we collect and use it.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm text-aeros-text-muted font-mono">
+          <div className="flex flex-wrap gap-6 text-xs text-muted-2 font-mono">
             <span>Last updated: March 25, 2026</span>
-            <span className="hidden sm:inline text-aeros-border">|</span>
             <span>Effective: March 25, 2026</span>
           </div>
         </div>
       </section>
 
-      {/* Content */}
       <section className="py-16 px-6">
         <div className="max-w-3xl mx-auto">
-          {/* Intro */}
-          <div className="prose-like mb-12 p-6 rounded-2xl bg-aeros-blue/[0.04] border border-aeros-blue/10">
-            <p className="text-aeros-text-2 leading-relaxed text-[15px]">
+          <div className="mb-12 p-6 rounded-2xl hairline bg-paper-2">
+            <p className="text-ink-2 leading-relaxed text-[15px]">
               This Privacy Policy describes how Aeros Technologies (&quot;Aeros&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) collects, uses, shares, and protects personal information when you use our platform, products, and services (&quot;Services&quot;). By using our Services, you agree to the collection and use of information in accordance with this policy.
             </p>
           </div>
 
-          {/* Sections */}
           <div className="space-y-12">
             {sections.map((section) => (
               <div key={section.title}>
-                <h2 className="text-xl font-bold text-aeros-text font-jakarta mb-6 pb-3 border-b border-aeros-border">
+                <h2 className="text-xl font-bold text-ink font-jakarta mb-6 pb-3 hairline-b">
                   {section.title}
                 </h2>
                 <div className="space-y-6">
                   {section.content.map((item) => (
                     <div key={item.heading}>
-                      <h3 className="text-[15px] font-semibold text-aeros-text font-jakarta mb-2">
+                      <h3 className="text-[15px] font-semibold text-ink font-jakarta mb-2">
                         {item.heading}
                       </h3>
-                      <p className="text-aeros-text-muted text-[15px] leading-relaxed">
+                      <p className="text-muted text-[15px] leading-relaxed">
                         {item.body}
                       </p>
                     </div>
@@ -224,11 +218,10 @@ export default function PrivacyPolicy() {
             ))}
           </div>
 
-          {/* Footer note */}
-          <div className="mt-16 pt-8 border-t border-aeros-border">
-            <p className="text-aeros-text-muted text-sm leading-relaxed">
+          <div className="mt-16 pt-8 hairline-t">
+            <p className="text-muted text-sm leading-relaxed">
               This policy applies to all Aeros products and services unless a separate privacy notice is provided. For questions, contact{' '}
-              <a href="mailto:privacy@aeros.io" className="text-aeros-blue hover:text-aeros-blue-light transition-colors">
+              <a href="mailto:privacy@aeros.io" className="text-ink underline hover:text-accent transition-colors">
                 privacy@aeros.io
               </a>.
             </p>

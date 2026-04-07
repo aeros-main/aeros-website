@@ -1,126 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Aeros brand colours ── */
-  --color-aeros-blue: #2347D9;
-  --color-aeros-blue-light: #3D5FE8;
-  --color-aeros-blue-dim: #1A35A8;
-  --color-aeros-blue-pale: #eef1fd;
-  --color-aeros-navy: #0A0F2E;
-  --color-aeros-navy-2: #0E1442;
+  /* Minimal black & white palette with the slightest blue accent */
+  --color-ink: #0a0a0a;
+  --color-ink-2: #1a1a1a;
+  --color-muted: #6b6b6b;
+  --color-muted-2: #9a9a9a;
+  --color-line: #ebebeb;
+  --color-line-2: #f3f3f3;
+  --color-paper: #ffffff;
+  --color-paper-2: #fafafa;
 
-  /* ── Light theme surfaces ── */
-  --color-aeros-surface: #ffffff;
-  --color-aeros-surface-alt: #f5f6ff;
-  --color-aeros-surface-card: #ffffff;
-  --color-aeros-border: #e4e7f0;
-  --color-aeros-border-blue: rgba(35, 71, 217, 0.2);
+  /* Used very sparingly */
+  --color-accent: #2347D9;
 
-  /* ── Text ── */
-  --color-aeros-text: #0d1226;
-  --color-aeros-text-2: #3a4068;
-  --color-aeros-text-muted: #6b7a9e;
-  --color-aeros-slate-light: #8890B5;
-  --color-aeros-slate-dim: #4A5280;
-
-  /* ── Typography ── */
   --font-jakarta: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-
-  /* ── Box shadows ── */
-  --shadow-glow-blue: 0 0 40px rgba(35, 71, 217, 0.25), 0 0 80px rgba(35, 71, 217, 0.1);
-  --shadow-glow-blue-sm: 0 0 20px rgba(35, 71, 217, 0.2);
-  --shadow-card: 0 1px 3px rgba(13, 18, 38, 0.06), 0 1px 2px rgba(13, 18, 38, 0.04);
-  --shadow-card-hover: 0 8px 24px rgba(13, 18, 38, 0.1), 0 0 0 1px rgba(35, 71, 217, 0.15);
-
-  /* ── Animations ── */
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
-  --animate-scan: scan 8s linear infinite;
 }
 
-/* ── Keyframes ── */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
-}
-
-@keyframes scan {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-/* ── Base resets ── */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #ffffff;
-  color: #0d1226;
+  background: #ffffff;
+  color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-::selection {
-  background: rgba(35, 71, 217, 0.15);
-  color: #0d1226;
-}
+::selection { background: #0a0a0a; color: #ffffff; }
 
-/* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f5f6ff; }
-::-webkit-scrollbar-thumb { background: #2347D9; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0a0a0a; }
 
-/* ── Utility classes ── */
-.text-gradient-blue {
-  background: linear-gradient(135deg, #1a35a8 0%, #2347D9 50%, #5872f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+.hairline { border: 1px solid var(--color-line); }
+.hairline-b { border-bottom: 1px solid var(--color-line); }
+.hairline-t { border-top: 1px solid var(--color-line); }
 
-.text-gradient-subtle {
-  background: linear-gradient(180deg, #0d1226 0%, rgba(13, 18, 38, 0.7) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.border-glow {
-  border: 1px solid rgba(35, 71, 217, 0.25);
-  box-shadow: 0 0 20px rgba(35, 71, 217, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(228, 231, 240, 0.8);
-  box-shadow: 0 4px 24px rgba(13, 18, 38, 0.06);
-}
-
-.glass-card {
-  background: #ffffff;
-  border: 1px solid #e4e7f0;
-  box-shadow: 0 1px 3px rgba(13, 18, 38, 0.05);
-}
-
-/* ── Grid/dot pattern helpers ── */
-.bg-grid-pattern {
+.bg-grid {
   background-image:
-    linear-gradient(rgba(35, 71, 217, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(35, 71, 217, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
-.bg-dot-pattern {
-  background-image: radial-gradient(rgba(35, 71, 217, 0.12) 1px, transparent 1px);
-  background-size: 28px 28px;
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
