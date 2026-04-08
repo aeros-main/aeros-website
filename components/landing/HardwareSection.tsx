@@ -1,23 +1,75 @@
+type IconProps = { className?: string }
+
+function CameraIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden>
+      <rect x="6" y="14" width="36" height="24" rx="3" stroke="currentColor" strokeWidth="2" />
+      <path d="M16 14l3-5h10l3 5" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+      <circle cx="24" cy="26" r="6" stroke="currentColor" strokeWidth="2" />
+      <circle cx="24" cy="26" r="2" fill="currentColor" />
+    </svg>
+  )
+}
+
+function TerminalIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden>
+      <rect x="6" y="8" width="36" height="26" rx="3" stroke="currentColor" strokeWidth="2" />
+      <path d="M14 16l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M22 26h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M18 40h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M24 34v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function BadgeIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden>
+      <path d="M24 4v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <rect x="20" y="8" width="8" height="4" rx="1" stroke="currentColor" strokeWidth="2" />
+      <rect x="9" y="12" width="30" height="32" rx="3" stroke="currentColor" strokeWidth="2" />
+      <circle cx="24" cy="24" r="4" stroke="currentColor" strokeWidth="2" />
+      <path d="M16 36c1.5-3 4.5-5 8-5s6.5 2 8 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+function SenseIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" className={className} aria-hidden>
+      <circle cx="24" cy="32" r="3" fill="currentColor" />
+      <path d="M17 25a10 10 0 0114 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M12 20a17 17 0 0124 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M7 15a24 24 0 0134 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 const devices = [
   {
     name: 'Aeros Sight',
     description: 'Computer vision cameras for the floor.',
     tags: ['Edge AI', 'PoE'],
+    Icon: CameraIcon,
   },
   {
     name: 'Aeros Terminal',
     description: 'Touchscreen point of sale & ops.',
     tags: ['Android', '4G'],
+    Icon: TerminalIcon,
   },
   {
     name: 'Aeros Badge',
     description: 'Wearable identity for staff & access.',
     tags: ['BLE', 'NFC'],
+    Icon: BadgeIcon,
   },
   {
     name: 'Aeros Sense',
     description: 'Environmental & equipment sensors.',
     tags: ['LoRa', 'Battery'],
+    Icon: SenseIcon,
   },
 ]
 
@@ -41,7 +93,7 @@ export default function HardwareSection() {
           {devices.map((d) => (
             <div key={d.name} className="bg-white p-6">
               <div className="aspect-[4/3] rounded-lg bg-paper-2 hairline mb-5 flex items-center justify-center">
-                <div className="w-12 h-12 rounded-md bg-ink/90" />
+                <d.Icon className="w-14 h-14 text-ink" />
               </div>
               <h3 className="font-bold text-ink font-jakarta mb-1">
                 {d.name}
