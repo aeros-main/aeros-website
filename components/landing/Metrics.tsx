@@ -20,8 +20,11 @@ export default function Metrics() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line hairline">
           {metrics.map((m) => (
-            <div key={m.label} className="bg-paper-2 p-10 text-center">
-              <div className="font-jakarta text-5xl md:text-6xl font-bold text-ink leading-none mb-3">
+            <div
+              key={m.label}
+              className="bg-paper-2 p-10 text-center flex flex-col items-center justify-center min-h-[180px]"
+            >
+              <div className="font-jakarta text-4xl md:text-5xl font-bold text-ink leading-none mb-3 tracking-tight whitespace-nowrap">
                 {m.value}
               </div>
               <div className="text-sm text-muted">{m.label}</div>
