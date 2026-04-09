@@ -36,7 +36,7 @@ export default function AISection() {
           </p>
         </div>
 
-        <div className="border border-white/15 rounded-2xl p-6 mb-12 max-w-2xl bg-white/[0.02]">
+        <div className="border border-white/15 rounded-3xl p-6 mb-12 max-w-2xl bg-white/[0.02]">
           <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-3">
             Aeros AI · natural language query
           </div>
@@ -48,9 +48,9 @@ export default function AISection() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
+        <div className="grid md:grid-cols-3 gap-4">
           {features.map((f) => (
-            <div key={f.title} className="bg-ink-900 p-8">
+            <div key={f.title} className="bg-ink-900 p-8 rounded-3xl border border-white/10">
               <h3 className="text-lg font-bold mb-3">
                 {f.title}
               </h3>

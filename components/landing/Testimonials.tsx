@@ -35,9 +35,9 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border-default border border-border-default">
+        <div className="grid md:grid-cols-3 gap-4">
           {testimonials.map((t) => (
-            <figure key={t.name} className="bg-bg-subtle p-8">
+            <figure key={t.name} className="bg-bg-subtle p-8 rounded-3xl border border-border-default">
               <blockquote className="text-fg-primary leading-relaxed mb-8">
                 “{t.quote}”
               </blockquote>

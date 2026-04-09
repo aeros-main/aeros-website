@@ -86,13 +86,13 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border-default border border-border-default">
+        <div className="grid md:grid-cols-3 gap-4">
           {plans.map((p) => {
             const price = annual ? p.annual : p.monthly
             return (
               <div
                 key={p.name}
-                className={`p-8 ${
+                className={`p-8 rounded-3xl border border-border-default ${
                   p.highlighted ? 'bg-ink-900 text-white' : 'bg-white'
                 }`}
               >

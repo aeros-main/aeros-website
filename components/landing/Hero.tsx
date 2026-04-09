@@ -39,7 +39,7 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-5xl mx-auto mt-24">
-        <div className="border border-border-default rounded-2xl overflow-hidden bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.15)]">
+        <div className="border border-border-default rounded-3xl overflow-hidden bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.15)]">
           <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border-default bg-bg-subtle">
             <div className="w-2.5 h-2.5 rounded-full bg-border-default" />
             <div className="w-2.5 h-2.5 rounded-full bg-border-default" />
@@ -73,7 +73,7 @@ export default function Hero() {
                   ['Vendors', '1,240'],
                   ['Alerts', '2'],
                 ].map(([label, value]) => (
-                  <div key={label} className="border border-border-default rounded-xl p-3">
+                  <div key={label} className="border border-border-default rounded-2xl p-3">
                     <div className="text-[10px] text-fg-muted/60 uppercase tracking-wider mb-1">
                       {label}
                     </div>
@@ -84,7 +84,7 @@ export default function Hero() {
                 ))}
               </div>
 
-              <div className="border border-border-default rounded-xl p-4">
+              <div className="border border-border-default rounded-2xl p-4">
                 <div className="text-[10px] text-fg-muted/60 uppercase tracking-wider mb-3">
                   Revenue · 30 days
                 </div>

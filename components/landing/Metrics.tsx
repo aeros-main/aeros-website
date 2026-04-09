@@ -18,11 +18,11 @@ export default function Metrics() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-default border border-border-default">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {metrics.map((m) => (
             <div
               key={m.label}
-              className="bg-bg-subtle p-10 text-center flex flex-col items-center justify-center min-h-[180px]"
+              className="bg-bg-subtle p-10 rounded-3xl border border-border-default text-center flex flex-col items-center justify-center min-h-[180px]"
             >
               <div className="text-4xl md:text-5xl font-bold text-fg-primary leading-none mb-3 tracking-tight whitespace-nowrap">
                 {m.value}

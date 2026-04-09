@@ -23,11 +23,11 @@ export default function PlatformOverview() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border-default border border-border-default">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {platforms.map((p) => (
             <div
               key={p.title}
-              className="bg-white p-8 group hover:bg-bg-subtle transition-colors"
+              className="bg-white p-8 rounded-3xl border border-border-default group hover:bg-bg-subtle transition-colors"
             >
               <div className="text-xs font-mono text-fg-muted/60 mb-6">
                 / {p.title.toLowerCase()}

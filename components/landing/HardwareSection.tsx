@@ -89,10 +89,10 @@ export default function HardwareSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-default border border-border-default">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {devices.map((d) => (
-            <div key={d.name} className="bg-white p-6">
-              <div className="aspect-[4/3] rounded-lg bg-bg-subtle border border-border-default mb-5 flex items-center justify-center">
+            <div key={d.name} className="bg-white p-6 rounded-3xl border border-border-default">
+              <div className="aspect-[4/3] rounded-2xl bg-bg-subtle border border-border-default mb-5 flex items-center justify-center">
                 <d.Icon className="w-14 h-14 text-fg-primary" />
               </div>
               <h3 className="font-bold text-fg-primary mb-1">
