@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# aeros-website
 
-## Getting Started
+The Aeros marketing site (aeros-x.com). Next.js 16 + `@aeros/react` design system.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (Turbopack)
+- **React 19**
+- **Tailwind CSS v4**
+- **`@aeros/react` + `@aeros/tokens`** — design system, vendored as a git submodule under `vendor/aeros-design-system` and linked into the pnpm workspace.
+
+## Prerequisites
+
+- **Node.js ≥ 20.9** (recommended: 24.x — install via `nvm install 24`)
+- **pnpm ≥ 9** (`npm i -g pnpm` or via [corepack](https://nodejs.org/api/corepack.html))
+
+## First-time setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone --recurse-submodules https://github.com/aeros-main/aeros-website.git
+cd aeros-website
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you cloned without `--recurse-submodules`:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git submodule update --init --recursive
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`pnpm install` automatically links `@aeros/react` and `@aeros/tokens` from the vendored submodule via the workspace. The first build will compile their `dist/` outputs (handled by the `prebuild` / `predev` hooks).
 
-## Learn More
+## Develop
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Opens at [http://localhost:3000](http://localhost:3000). The `predev` hook builds the design system once on startup; if you change DS source, run `pnpm ds:build` to rebuild.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build
+
+```bash
+pnpm build
+```
+
+Runs `pnpm ds:build` first, then `next build`. Output is fully static.
+
+## Lint
+
+```bash
+pnpm lint
+```
+
+## Working on the design system
+
+The DS lives in `vendor/aeros-design-system` as a submodule pinned to a specific commit. To change a DS component:
+
+```bash
+cd vendor/aeros-design-system
+git checkout -b my-fix
+# … make changes …
+git commit -am "fix: …"
+git push origin my-fix
+```
+
+Then back in the website root:
+
+```bash
+cd ../..
+git add vendor/aeros-design-system
+git commit -m "chore: bump design system to <sha>"
+```
+
+`pnpm install` will pick up the new commit. The `predev` / `prebuild` hooks rebuild the DS dist automatically.
+
+## Project layout
+
+```
+app/                          Next.js app router
+  layout.tsx                  Imports @aeros/react/styles.css + globals.css
+  page.tsx                    Landing page composition
+  globals.css                 Site-only utilities (.bg-grid, scrollbar)
+components/landing/           Hero, Navbar, Footer, etc. (use DS alias classes)
+vendor/aeros-design-system/   Submodule (pinned commit)
+  packages/tokens/            @aeros/tokens — source of truth
+  packages/react/             @aeros/react — components
+pnpm-workspace.yaml           Workspace config (root + DS packages)
+```
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Vercel auto-detects pnpm via `pnpm-lock.yaml`. Recommended settings:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Install Command:** `pnpm install --frozen-lockfile`
+- **Build Command:** `pnpm build` (default — `prebuild` runs `ds:build` automatically)
+- **Output Directory:** `.next` (default)
+
+> Make sure Vercel checks out submodules. Project Settings → Git → "Include source files outside of the Root Directory in the Build Step" should be on, and set the install command above.

@@ -3,16 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "node scripts/setup-design-system.mjs || true",
-    "ds:setup": "node scripts/setup-design-system.mjs",
+    "ds:build": "pnpm --filter @aeros/tokens build && pnpm --filter @aeros/react build",
+    "predev": "pnpm ds:build",
+    "prebuild": "pnpm ds:build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@aeros/react": "file:vendor/aeros-design-system/packages/react",
-    "@aeros/tokens": "file:vendor/aeros-design-system/packages/tokens",
+    "@aeros/react": "workspace:*",
+    "@aeros/tokens": "workspace:*",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.0.1",
     "next": "16.2.1",
@@ -28,5 +29,8 @@
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp", "unrs-resolver"]
   }
 }

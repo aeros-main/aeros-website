@@ -1,0 +1,4 @@
+packages:
+  - "."
+  - "vendor/aeros-design-system/packages/tokens"
+  - "vendor/aeros-design-system/packages/react"
