@@ -47,7 +47,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-6 gap-12">
           <div className="lg:col-span-2">
-            <div className="font-bold text-xl text-fg-primary tracking-tight">
+            <div className="aeros-logo text-xl text-fg-primary">
               Aeros<span className="text-royal-600">.</span>
             </div>
             <p className="mt-4 text-sm text-fg-muted max-w-xs leading-relaxed">
