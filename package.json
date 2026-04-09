@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "node scripts/setup-design-system.mjs || true",
+    "ds:setup": "node scripts/setup-design-system.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@aeros/react": "file:vendor/aeros-design-system/packages/react",
+    "@aeros/tokens": "file:vendor/aeros-design-system/packages/tokens",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.0.1",
     "next": "16.2.1",

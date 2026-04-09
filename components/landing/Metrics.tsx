@@ -7,27 +7,27 @@ const metrics = [
 
 export default function Metrics() {
   return (
-    <section className="py-32 px-6 bg-paper-2 hairline-t hairline-b">
+    <section className="py-32 px-6 bg-bg-subtle border-t border-border-default border-b border-border-default">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-muted-2 mb-4">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-fg-muted/60 mb-4">
             By the numbers
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-ink font-jakarta leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-fg-primary leading-tight">
             Proven in the field.
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line hairline">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-default border border-border-default">
           {metrics.map((m) => (
             <div
               key={m.label}
-              className="bg-paper-2 p-10 text-center flex flex-col items-center justify-center min-h-[180px]"
+              className="bg-bg-subtle p-10 text-center flex flex-col items-center justify-center min-h-[180px]"
             >
-              <div className="font-jakarta text-4xl md:text-5xl font-bold text-ink leading-none mb-3 tracking-tight whitespace-nowrap">
+              <div className="text-4xl md:text-5xl font-bold text-fg-primary leading-none mb-3 tracking-tight whitespace-nowrap">
                 {m.value}
               </div>
-              <div className="text-sm text-muted">{m.label}</div>
+              <div className="text-sm text-fg-muted">{m.label}</div>
             </div>
           ))}
         </div>

@@ -1,49 +1,25 @@
+/*
+ * Website-only styles.
+ * Tokens, typography, shadows, radii and component primitives come from
+ * `@aeros/react/styles.css` which is imported BEFORE this file in layout.tsx.
+ * Only keep landing-page-specific utilities here.
+ */
 @import "tailwindcss";
 
-@theme {
-  /* Minimal black & white palette with the slightest blue accent */
-  --color-ink: #0a0a0a;
-  --color-ink-2: #1a1a1a;
-  --color-muted: #6b6b6b;
-  --color-muted-2: #9a9a9a;
-  --color-line: #ebebeb;
-  --color-line-2: #f3f3f3;
-  --color-paper: #ffffff;
-  --color-paper-2: #fafafa;
-
-  /* Used very sparingly */
-  --color-accent: #2347D9;
-
-  --font-jakarta: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
 
-body {
-  background: #ffffff;
-  color: #0a0a0a;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
+::selection { background: var(--aeros-fg-primary); color: var(--aeros-bg-surface); }
 
-::selection { background: #0a0a0a; color: #ffffff; }
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #ffffff; }
-::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 3px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #C2C2C2; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #0a0a0a; }
 
-.hairline { border: 1px solid var(--color-line); }
-.hairline-b { border-bottom: 1px solid var(--color-line); }
-.hairline-t { border-top: 1px solid var(--color-line); }
-
+/* Subtle black hairline grid — for hero + technical sections */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
 }

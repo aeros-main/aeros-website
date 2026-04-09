@@ -1,0 +1,3 @@
+[submodule "vendor/aeros-design-system"]
+	path = vendor/aeros-design-system
+	url = https://github.com/aeros-main/aeros-design-system.git

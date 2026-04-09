@@ -21,13 +21,13 @@ const features = [
 
 export default function AISection() {
   return (
-    <section id="ai" className="py-32 px-6 bg-ink text-white">
+    <section id="ai" className="py-32 px-6 bg-ink-900 text-white">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mb-16">
           <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 mb-4">
             AI Layer
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight font-jakarta">
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
             Built in, not bolted on.
           </h2>
           <p className="mt-5 text-white/60 text-lg">
@@ -50,8 +50,8 @@ export default function AISection() {
 
         <div className="grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {features.map((f) => (
-            <div key={f.title} className="bg-ink p-8">
-              <h3 className="text-lg font-bold font-jakarta mb-3">
+            <div key={f.title} className="bg-ink-900 p-8">
+              <h3 className="text-lg font-bold mb-3">
                 {f.title}
               </h3>
               <p className="text-white/60 text-sm leading-relaxed mb-5">

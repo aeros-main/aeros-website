@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans, IBM_Plex_Mono } from 'next/font/google'
+import '@aeros/react/styles.css'
 import './globals.css'
 
 const jakarta = Plus_Jakarta_Sans({
@@ -33,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${mono.variable}`}>
-      <body className="bg-white font-jakarta antialiased overflow-x-hidden">
+    <html lang="en" className={`${jakarta.variable} ${mono.variable}`} data-theme="light">
+      <body className="bg-bg-canvas text-fg-primary font-sans antialiased overflow-x-hidden">
         {children}
       </body>
     </html>

@@ -78,32 +78,32 @@ export default function HardwareSection() {
     <section id="hardware" className="py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className="max-w-2xl mb-16">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-muted-2 mb-4">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-fg-muted/60 mb-4">
             Hardware
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-ink font-jakarta leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-fg-primary leading-tight">
             Hardware closes the loop.
           </h2>
-          <p className="mt-5 text-muted text-lg">
+          <p className="mt-5 text-fg-muted text-lg">
             Devices that pair in seconds and stream straight into Aeros.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-line hairline">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border-default border border-border-default">
           {devices.map((d) => (
             <div key={d.name} className="bg-white p-6">
-              <div className="aspect-[4/3] rounded-lg bg-paper-2 hairline mb-5 flex items-center justify-center">
-                <d.Icon className="w-14 h-14 text-ink" />
+              <div className="aspect-[4/3] rounded-lg bg-bg-subtle border border-border-default mb-5 flex items-center justify-center">
+                <d.Icon className="w-14 h-14 text-fg-primary" />
               </div>
-              <h3 className="font-bold text-ink font-jakarta mb-1">
+              <h3 className="font-bold text-fg-primary mb-1">
                 {d.name}
               </h3>
-              <p className="text-muted text-sm mb-4">{d.description}</p>
+              <p className="text-fg-muted text-sm mb-4">{d.description}</p>
               <div className="flex gap-1.5">
                 {d.tags.map((t) => (
                   <span
                     key={t}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded hairline text-muted"
+                    className="text-[10px] font-mono px-2 py-0.5 rounded border border-border-default text-fg-muted"
                   >
                     {t}
                   </span>
@@ -113,11 +113,11 @@ export default function HardwareSection() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-muted">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-fg-muted">
           <span>Zero-config pairing</span>
-          <span className="text-line">·</span>
+          <span className="text-border-default">·</span>
           <span>Real-time sync</span>
-          <span className="text-line">·</span>
+          <span className="text-border-default">·</span>
           <span>OTA updates</span>
         </div>
       </div>

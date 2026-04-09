@@ -6,18 +6,18 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
 
       <div className="relative max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full hairline mb-10">
-          <span className="w-1 h-1 rounded-full bg-accent" />
-          <span className="text-xs text-muted font-mono uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border-default mb-10">
+          <span className="w-1 h-1 rounded-full bg-royal-600" />
+          <span className="text-xs text-fg-muted font-mono uppercase tracking-wider">
             Now live
           </span>
         </div>
 
-        <h1 className="font-jakarta font-bold text-ink leading-[0.95] tracking-tight text-[clamp(3.5rem,11vw,8rem)]">
+        <h1 className="font-bold text-fg-primary leading-[0.95] tracking-tight text-[clamp(3.5rem,11vw,8rem)]">
           Run<br />everything.
         </h1>
 
-        <p className="mt-10 text-lg md:text-xl text-muted max-w-xl mx-auto leading-relaxed">
+        <p className="mt-10 text-lg md:text-xl text-fg-muted max-w-xl mx-auto leading-relaxed">
           One operating system for your entire business. Marketplace,
           operations, AI, and hardware — unified.
         </p>
@@ -25,13 +25,13 @@ export default function Hero() {
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="#"
-            className="px-7 py-3.5 rounded-full bg-ink text-white text-sm font-medium hover:bg-ink-2 transition-colors"
+            className="px-7 py-3.5 rounded-full bg-ink-900 text-white text-sm font-medium hover:bg-ink-800 transition-colors"
           >
             Start for free
           </a>
           <a
             href="#"
-            className="px-7 py-3.5 rounded-full hairline text-ink text-sm font-medium hover:bg-paper-2 transition-colors"
+            className="px-7 py-3.5 rounded-full border border-border-default text-fg-primary text-sm font-medium hover:bg-bg-subtle transition-colors"
           >
             See how it works
           </a>
@@ -39,24 +39,24 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-5xl mx-auto mt-24">
-        <div className="hairline rounded-2xl overflow-hidden bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.15)]">
-          <div className="flex items-center gap-1.5 px-4 py-3 hairline-b bg-paper-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-line" />
-            <div className="w-2.5 h-2.5 rounded-full bg-line" />
-            <div className="w-2.5 h-2.5 rounded-full bg-line" />
-            <div className="ml-3 text-[11px] text-muted-2 font-mono">
+        <div className="border border-border-default rounded-2xl overflow-hidden bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.15)]">
+          <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border-default bg-bg-subtle">
+            <div className="w-2.5 h-2.5 rounded-full bg-border-default" />
+            <div className="w-2.5 h-2.5 rounded-full bg-border-default" />
+            <div className="w-2.5 h-2.5 rounded-full bg-border-default" />
+            <div className="ml-3 text-[11px] text-fg-muted/60 font-mono">
               app.aeros.io/dashboard
             </div>
           </div>
 
           <div className="grid grid-cols-12 min-h-[320px]">
-            <aside className="col-span-3 hairline-b border-r border-line p-4 space-y-1 bg-white hidden md:block">
+            <aside className="col-span-3 border-b border-border-default border-r border-border-default p-4 space-y-1 bg-white hidden md:block">
               {['Dashboard', 'Marketplace', 'Orders', 'Reports', 'Hardware'].map(
                 (item, i) => (
                   <div
                     key={item}
                     className={`px-3 py-2 rounded-md text-xs ${
-                      i === 0 ? 'bg-ink text-white' : 'text-muted'
+                      i === 0 ? 'bg-ink-900 text-white' : 'text-fg-muted'
                     }`}
                   >
                     {item}
@@ -73,19 +73,19 @@ export default function Hero() {
                   ['Vendors', '1,240'],
                   ['Alerts', '2'],
                 ].map(([label, value]) => (
-                  <div key={label} className="hairline rounded-xl p-3">
-                    <div className="text-[10px] text-muted-2 uppercase tracking-wider mb-1">
+                  <div key={label} className="border border-border-default rounded-xl p-3">
+                    <div className="text-[10px] text-fg-muted/60 uppercase tracking-wider mb-1">
                       {label}
                     </div>
-                    <div className="text-ink font-bold text-lg font-jakarta">
+                    <div className="text-fg-primary font-bold text-lg">
                       {value}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="hairline rounded-xl p-4">
-                <div className="text-[10px] text-muted-2 uppercase tracking-wider mb-3">
+              <div className="border border-border-default rounded-xl p-4">
+                <div className="text-[10px] text-fg-muted/60 uppercase tracking-wider mb-3">
                   Revenue · 30 days
                 </div>
                 <svg viewBox="0 0 400 60" className="w-full h-16" preserveAspectRatio="none">

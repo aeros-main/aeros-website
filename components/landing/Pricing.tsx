@@ -56,21 +56,21 @@ export default function Pricing() {
     <section id="pricing" className="py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-muted-2 mb-4">
+          <div className="text-[10px] font-mono uppercase tracking-widest text-fg-muted/60 mb-4">
             Pricing
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-ink font-jakarta leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-fg-primary leading-tight">
             Simple pricing.
           </h2>
-          <p className="mt-5 text-muted text-lg">
+          <p className="mt-5 text-fg-muted text-lg">
             Start free. Scale when ready.
           </p>
 
-          <div className="mt-8 inline-flex items-center gap-1 p-1 rounded-full hairline">
+          <div className="mt-8 inline-flex items-center gap-1 p-1 rounded-full border border-border-default">
             <button
               onClick={() => setAnnual(false)}
               className={`px-4 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                !annual ? 'bg-ink text-white' : 'text-muted'
+                !annual ? 'bg-ink-900 text-white' : 'text-fg-muted'
               }`}
             >
               Monthly
@@ -78,7 +78,7 @@ export default function Pricing() {
             <button
               onClick={() => setAnnual(true)}
               className={`px-4 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                annual ? 'bg-ink text-white' : 'text-muted'
+                annual ? 'bg-ink-900 text-white' : 'text-fg-muted'
               }`}
             >
               Annual
@@ -86,26 +86,26 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-line hairline">
+        <div className="grid md:grid-cols-3 gap-px bg-border-default border border-border-default">
           {plans.map((p) => {
             const price = annual ? p.annual : p.monthly
             return (
               <div
                 key={p.name}
                 className={`p-8 ${
-                  p.highlighted ? 'bg-ink text-white' : 'bg-white'
+                  p.highlighted ? 'bg-ink-900 text-white' : 'bg-white'
                 }`}
               >
                 <h3
-                  className={`text-lg font-bold font-jakarta mb-1 ${
-                    p.highlighted ? 'text-white' : 'text-ink'
+                  className={`text-lg font-bold mb-1 ${
+                    p.highlighted ? 'text-white' : 'text-fg-primary'
                   }`}
                 >
                   {p.name}
                 </h3>
                 <p
                   className={`text-sm mb-6 ${
-                    p.highlighted ? 'text-white/60' : 'text-muted'
+                    p.highlighted ? 'text-white/60' : 'text-fg-muted'
                   }`}
                 >
                   {p.description}
@@ -115,15 +115,15 @@ export default function Pricing() {
                   {price !== null ? (
                     <>
                       <span
-                        className={`text-4xl font-bold font-jakarta ${
-                          p.highlighted ? 'text-white' : 'text-ink'
+                        className={`text-4xl font-bold ${
+                          p.highlighted ? 'text-white' : 'text-fg-primary'
                         }`}
                       >
                         ${price}
                       </span>
                       <span
                         className={`text-sm ${
-                          p.highlighted ? 'text-white/60' : 'text-muted'
+                          p.highlighted ? 'text-white/60' : 'text-fg-muted'
                         }`}
                       >
                         {' '}/mo
@@ -131,8 +131,8 @@ export default function Pricing() {
                     </>
                   ) : (
                     <span
-                      className={`text-4xl font-bold font-jakarta ${
-                        p.highlighted ? 'text-white' : 'text-ink'
+                      className={`text-4xl font-bold ${
+                        p.highlighted ? 'text-white' : 'text-fg-primary'
                       }`}
                     >
                       Custom
@@ -144,8 +144,8 @@ export default function Pricing() {
                   href="#"
                   className={`block text-center text-sm font-medium py-3 rounded-full mb-7 transition-colors ${
                     p.highlighted
-                      ? 'bg-white text-ink hover:bg-white/90'
-                      : 'bg-ink text-white hover:bg-ink-2'
+                      ? 'bg-white text-fg-primary hover:bg-white/90'
+                      : 'bg-ink-900 text-white hover:bg-ink-800'
                   }`}
                 >
                   {p.cta}
@@ -156,7 +156,7 @@ export default function Pricing() {
                     <li
                       key={f}
                       className={`text-sm flex items-start gap-2 ${
-                        p.highlighted ? 'text-white/70' : 'text-muted'
+                        p.highlighted ? 'text-white/70' : 'text-fg-muted'
                       }`}
                     >
                       <span className="mt-2 w-1 h-1 rounded-full bg-current opacity-60" />
