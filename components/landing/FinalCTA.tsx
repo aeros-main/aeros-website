@@ -7,7 +7,7 @@ export default function FinalCTA() {
           <span className="text-fg-muted/60">Starting today.</span>
         </h2>
         <p className="mt-8 text-fg-muted text-lg max-w-lg mx-auto">
-          Joining 10,000+ businesses moving the real economy on Aeros.
+          Join 10,000+ businesses trading on the Aeros marketplace.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a

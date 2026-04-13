@@ -3,9 +3,7 @@
 import { useState } from 'react'
 
 const links = [
-  { label: 'Platform', href: '#platform' },
-  { label: 'AI', href: '#ai' },
-  { label: 'Hardware', href: '#hardware' },
+  { label: 'Marketplace', href: '#marketplace' },
   { label: 'Pricing', href: '#pricing' },
 ]
 

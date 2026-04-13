@@ -18,8 +18,8 @@ export default function Hero() {
         </h1>
 
         <p className="mt-10 text-lg md:text-xl text-fg-muted max-w-xl mx-auto leading-relaxed">
-          One operating system for your entire business. Marketplace,
-          operations, AI, and hardware — unified.
+          The B2B marketplace built for India's real economy. Source,
+          sell, and scale — all in one place.
         </p>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -51,7 +51,7 @@ export default function Hero() {
 
           <div className="grid grid-cols-12 min-h-[320px]">
             <aside className="col-span-3 border-b border-border-default border-r border-border-default p-4 space-y-1 bg-white hidden md:block">
-              {['Dashboard', 'Marketplace', 'Orders', 'Reports', 'Hardware'].map(
+              {['Dashboard', 'Marketplace', 'Orders', 'Reports'].map(
                 (item, i) => (
                   <div
                     key={item}

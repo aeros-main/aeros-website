@@ -1,6 +1,6 @@
 export default function ProblemSolution() {
   return (
-    <section className="py-32 px-6 bg-bg-subtle border-t border-border-default border-b border-border-default">
+    <section id="marketplace" className="py-32 px-6 bg-bg-subtle border-t border-border-default border-b border-border-default">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-px bg-border-default">
         <div className="bg-bg-subtle p-10 md:p-14">
           <div className="text-[10px] font-mono uppercase tracking-widest text-fg-muted/60 mb-4">
@@ -10,8 +10,8 @@ export default function ProblemSolution() {
             Broken workflows.
           </h3>
           <p className="text-fg-muted leading-relaxed mb-6 max-w-sm">
-            Five tools, three spreadsheets, no answers. Your business runs
-            despite your software, not because of it.
+            Five WhatsApp groups, three spreadsheets, no visibility. Your
+            supply chain runs despite your tools, not because of them.
           </p>
           <div className="flex flex-wrap gap-2">
             {['Disconnected', 'Manual', 'Slow'].map((t) => (
@@ -30,11 +30,11 @@ export default function ProblemSolution() {
             The solution
           </div>
           <h3 className="text-3xl md:text-4xl font-bold text-fg-primary leading-tight mb-5">
-            Total control.
+            One marketplace.
           </h3>
           <p className="text-fg-muted leading-relaxed mb-6 max-w-sm">
-            One platform that runs every part of your business — and tells
-            you what to do next.
+            Source products, manage orders, and grow your B2B network —
+            all from a single platform.
           </p>
           <div className="flex flex-wrap gap-2">
             {['Unified', 'Automated', 'Real-time'].map((t) => (

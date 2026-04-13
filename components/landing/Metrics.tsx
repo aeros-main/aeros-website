@@ -1,7 +1,6 @@
 const metrics = [
   { value: '10k+', label: 'Businesses onboarded' },
   { value: '₹2,400 Cr', label: 'GMV processed' },
-  { value: '5', label: 'Verticals · 1 platform' },
   { value: '12', label: 'Markets active' },
 ]
 
@@ -18,7 +17,7 @@ export default function Metrics() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-3 gap-4">
           {metrics.map((m) => (
             <div
               key={m.label}

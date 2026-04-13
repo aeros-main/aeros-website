@@ -1,13 +1,9 @@
 const columns = [
   {
-    title: 'Platform',
+    title: 'Product',
     links: [
-      { label: 'Marketplace', href: '#' },
-      { label: 'FactoryOS', href: '#' },
-      { label: 'CafeOS', href: '#' },
-      { label: 'TradingOS', href: '#' },
-      { label: 'AgencyOS', href: '#' },
-      { label: 'AI Layer', href: '#' },
+      { label: 'Marketplace', href: '#marketplace' },
+      { label: 'Pricing', href: '#pricing' },
     ],
   },
   {
@@ -16,7 +12,6 @@ const columns = [
       { label: 'For Manufacturers', href: '#' },
       { label: 'For Retailers', href: '#' },
       { label: 'For Traders', href: '#' },
-      { label: 'For Agencies', href: '#' },
       { label: 'Enterprise', href: '#' },
     ],
   },
@@ -26,7 +21,6 @@ const columns = [
       { label: 'About', href: '#' },
       { label: 'Blog', href: '#' },
       { label: 'Careers', href: '#' },
-      { label: 'Press', href: '#' },
       { label: 'Contact', href: '#' },
     ],
   },
@@ -36,7 +30,6 @@ const columns = [
       { label: 'Privacy', href: '/privacy' },
       { label: 'Terms', href: '#' },
       { label: 'Cookies', href: '#' },
-      { label: 'Security', href: '#' },
     ],
   },
 ]

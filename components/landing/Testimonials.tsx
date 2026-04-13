@@ -1,21 +1,21 @@
 const testimonials = [
   {
     quote:
-      'We replaced four tools with Aeros in a week. Our floor managers actually use it.',
+      'We replaced four tools with Aeros in a week. Our procurement team actually uses it.',
     name: 'Rajesh Nair',
     role: 'COO',
     company: 'Nair Textiles',
   },
   {
     quote:
-      'The daily AI brief catches problems before our team even logs in. Worth it on day one.',
+      'Finding reliable vendors used to take weeks. On Aeros, we sourced and placed our first order in a day.',
     name: 'Priya Mehra',
     role: 'Founder',
-    company: 'Mehra Cafes',
+    company: 'Mehra Foods',
   },
   {
     quote:
-      'One platform across our 14 outlets. Inventory finally adds up at the end of the month.',
+      'One marketplace across our 14 outlets. Orders and inventory finally add up at the end of the month.',
     name: 'Khalid Al-Mansouri',
     role: 'Director',
     company: 'Mansouri Trading',
