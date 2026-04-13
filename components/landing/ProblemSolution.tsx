@@ -1,8 +1,8 @@
 export default function ProblemSolution() {
   return (
     <section id="marketplace" className="py-32 px-6 bg-bg-subtle border-t border-border-default border-b border-border-default">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-px bg-border-default">
-        <div className="bg-bg-subtle p-10 md:p-14">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4">
+        <div className="bg-bg-subtle p-10 md:p-14 rounded-3xl border border-border-default">
           <div className="text-[10px] font-mono uppercase tracking-widest text-fg-muted/60 mb-4">
             The problem
           </div>
@@ -25,7 +25,7 @@ export default function ProblemSolution() {
           </div>
         </div>
 
-        <div className="bg-white p-10 md:p-14">
+        <div className="bg-white p-10 md:p-14 rounded-3xl border border-border-default">
           <div className="text-[10px] font-mono uppercase tracking-widest text-royal-600 mb-4">
             The solution
           </div>
